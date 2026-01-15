@@ -1,24 +1,8 @@
 const resources = [
-    { 
-        name: "Social Science Jr", 
-        url: "https://s3.ap-south-1.amazonaws.com/resources.kodeitglobal.com/SS+Jr_Catalog_Digital+Version.pdf",
-        file: "assets/SS Jr_Catalog_Digital Version.pdf"
-    },
-    { 
-        name: "Social Science Sr", 
-        url: "https://s3.ap-south-1.amazonaws.com/resources.kodeitglobal.com/SS+Sr_Catalog_Digital+Version.pdf",
-        file: "assets/SS Sr_Catalog_Digital Version.pdf"
-    },
-    { 
-        name: "ICT", 
-        url: "https://s3.ap-south-1.amazonaws.com/resources.kodeitglobal.com/ICT_Catalog+_Digital+Version.pdf",
-        file: "assets/ICT_Catalog _Digital Version.pdf"
-    },
-    { 
-        name: "Kindergarten", 
-        url: "https://s3.ap-south-1.amazonaws.com/resources.kodeitglobal.com/KG_Catalog_Digital+Version.pdf", 
-        file: "assets/KG_Catalog_Digital Version.pdf"
-    }
+    { name: "Social Science Jr", url: "https://s3.ap-south-1.amazonaws.com/resources.kodeitglobal.com/SS+Jr_Catalog_Digital+Version.pdf" },
+    { name: "Social Science Sr", url: "https://s3.ap-south-1.amazonaws.com/resources.kodeitglobal.com/SS+Sr_Catalog_Digital+Version.pdf" },
+    { name: "ICT", url: "https://s3.ap-south-1.amazonaws.com/resources.kodeitglobal.com/ICT_Catalog+_Digital+Version.pdf" },
+    { name: "Kindergarten", url: "https://s3.ap-south-1.amazonaws.com/resources.kodeitglobal.com/KG_Catalog_Digital+Version.pdf" }
 ];
 
 const grid = document.getElementById('resource-grid');
@@ -39,8 +23,9 @@ resources.forEach((res, index) => {
 
     const downloadBtn = document.createElement('a');
     downloadBtn.className = 'download-btn';
-    downloadBtn.href = res.file;
-    downloadBtn.setAttribute('download', res.name); 
+    downloadBtn.href = res.url;
+    downloadBtn.setAttribute('download', ''); 
+    downloadBtn.target = "_blank";
     downloadBtn.innerHTML = `
         <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m4-5l5 5 5-5m-5 5V3"></path></svg>
         Download Catalog
